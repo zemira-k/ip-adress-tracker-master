@@ -4,7 +4,6 @@ import {Icon} from 'leaflet'
 
 
 export const Main = ({ ipInfo }) => {
-  console.log(ipInfo.ipPosition);
 
   function ChangeView({ center, zoom }) {
     const map = useMap();
