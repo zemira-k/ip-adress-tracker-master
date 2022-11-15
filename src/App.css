@@ -14,15 +14,9 @@
   height: 100vh;
 }
 
-#map {
-  height: 60vh;
-  position: sticky;
-}
-
 .header {
   background: 50% / cover no-repeat url(./images/pattern-bg.png);
   height: 18.75rem;
-  padding-top: 20px;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 1.625rem;
@@ -35,8 +29,6 @@
   font-family: Rubik, sans-serif;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
-  max-width: 375px;
 }
 
 .container-title {
@@ -49,19 +41,17 @@
 }
 
 .search-container {
-  max-width: 34.688rem;
   display: flex;
   justify-content: center;
   margin-bottom: 1.5rem;
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  width: 100%;
+  max-width: 375px;
 }
 
 .search-input {
   border-radius: 10px;
-  /* padding-left: 20px; */
   line-height: 50px;
   width: 100%;
   border: 2px solid white;
@@ -71,11 +61,8 @@
 .search-button {
   border-radius: 0 10px 10px 0;
   margin-left: -30px;
-  /* line-height: 17px; */
   background-color: black;
-  /* padding: 18px; */
   width: 55px;
-  /* color: white; */
   border: 2px solid black;
 }
 
@@ -85,11 +72,6 @@
 
 .info-box {
   background-color: White;
-  border-radius: 10px;
-  padding: 20px;
-  /* z-index: 5; */
-  /* text-align: center; */
-  max-width: 69.375rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -98,7 +80,11 @@
   margin-left: auto;
   margin-right: auto;
   padding: 1.625rem 1.5rem;
+  max-width: 375px;
 }
+
+.info-box-content {
+  padding: 0 0 24px;}
 
 .info-box-label {
   text-transform: uppercase;
@@ -106,21 +92,63 @@
   line-height: 10px;
   color: hsl(0, 0%, 59%);
   font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .info-box-text {
-  margin: 12px auto 18px;
+  margin: 0;
+  margin-top: 10px;
   font-weight: 700;
   line-height: 15px;
 }
 
 #map {
   position: relative;
-  min-height: calc(100vh - 280px);
-  z-index: 10;
+    /* min-height: calc(100vh - 350px); */
+    height: 36rem;
+    z-index: 10;
 }
 
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {
   visibility: hidden;
+}
+
+@media screen and (min-width: 1300px) {
+  .search-container {
+    max-width: 40%;
+    margin-bottom: 3rem;
+
+  }
+
+  .info-box {
+    flex-direction: row;
+    padding: 1.625rem 0;
+    max-width: 80%;
+    flex-wrap: nowrap;
+    text-align: left;
+  }
+
+  .info-box-text {
+    font-size: 24px;
+    line-height: 30px;
+    margin-top: 15px;
+  }
+
+  .info-box-label {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .info-box-content {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    padding: 30px 30px;
+    border-left: 1px solid black;
+  }
+
+  .info-box-content:first-of-type {
+    border-left: none;
+  }
 }

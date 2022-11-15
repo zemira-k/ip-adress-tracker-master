@@ -1,4 +1,7 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import img from '../images/icon-location.svg'
+import {Icon} from 'leaflet'
+
 
 export const Main = ({ ipInfo }) => {
   console.log(ipInfo.ipPosition);
@@ -22,7 +25,8 @@ export const Main = ({ ipInfo }) => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={[...ipInfo.ipPosition]}>
+        <Marker position={[...ipInfo.ipPosition]} icon={new Icon({iconUrl: img, iconAnchor: [12, 41]})}>
+
           <Popup>
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>

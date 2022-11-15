@@ -8,6 +8,25 @@ export const Header = ({ ipInfo, handleClick }) => {
     e.target[0].value = "";
   };
 
+  const infoLIst = [
+    {
+      label: "IP Address",
+      content: ipInfo.ipNumber,
+    },
+    {
+      label: "Location",
+      content: ipInfo.location,
+    },
+    {
+      label: "Timezone",
+      content: ipInfo.timeZone,
+    },
+    {
+      label: "ISP",
+      content: ipInfo.isp,
+    },
+  ];
+
   return (
     <section className="header">
       <div className="container">
@@ -23,14 +42,14 @@ export const Header = ({ ipInfo, handleClick }) => {
           </button>
         </form>
         <div className="info-box">
-          <label className="info-box-label">IP Address</label>
-          <p className="info-box-text ip">{ipInfo.ipNumber}</p>
-          <label className="info-box-label">Location</label>
-          <p className="info-box-text">{ipInfo.location}</p>
-          <label className="info-box-label">Timezone</label>
-          <p className="info-box-text">{ipInfo.timeZone}</p>
-          <label className="info-box-label">ISP</label>
-          <p className="info-box-text">{ipInfo.isp}</p>
+          {infoLIst.map((infoItem, i) => {
+            return (
+              <div className="info-box-content" key={i}>
+                <label className="info-box-label">{infoItem.label}</label>
+                <p className="info-box-text">{infoItem.content}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
